@@ -1,0 +1,318 @@
+:root{
+    /* Colors */
+    --clr-white: #fefefe;
+    --clr-dark: #272b2e;
+    --clr-dark-green: #37474F;
+    --clr-lighter-blue: #AAE0F3;
+    --clr-light-blue: #76CFEB;
+    --clr-blue: #0777BD;
+    --clr-dark-blue: #20417F;
+
+    /* Typography */
+    --ff-title: monospace;
+    --ff-subtitle: monospace;
+    --ff-btn: monospace;
+    --ff-text: monospace;
+    --fs-title: 3rem;
+    --fs-subtitle: 2rem;
+    --fs-btn: 1rem;
+    --fs-text: 1.8rem;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: var(--ff-title);
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--clr-white);
+}
+
+/* TODO: Define the font-family for title, subtitle, normal text and buttons */
+
+/* ------------------ Header ---------------- */
+
+#home{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#top-nav{
+    width: 100%;
+    height: 100px;
+    background-color: var(--clr-dark);
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .98;
+}
+
+#top-nav ul{
+    display: flex;
+    /* outline: 1px solid blue; */
+    list-style: none;
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#top-nav li{
+    color: var(--clr-white);
+    opacity: .5;
+    transition: all 250ms linear;
+}
+
+#top-nav li:hover{
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.25);
+}
+
+#nav-contact-btn{
+    background-color: #D50000;
+    padding: .3rem .2rem .3rem .5rem;
+    border-radius: 3px;
+    color: var(--clr-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TODO: Create animation for the hover effect of the Contact Us btn => the btn rotate on each direction like a ringing phone.  */
+
+#btn-img_container{
+    width: 2rem;
+}
+
+#nav-contact-btn:hover{
+    transform: scale(1.25);
+}
+
+#banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner__img{
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+#banner__logo{
+    position: relative;
+    z-index: 50;
+}
+
+#banner__logo > img{
+    width: 125%;
+    filter: drop-shadow(10px 10px 15px #fefefe);
+}
+
+#profile_container{
+    /* outline: 1px solid red; */
+    width: 100%;
+    height: 250px;
+    background-color: var(--clr-dark-green);
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+    opacity: .99;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-box{
+    border-left: 1px solid #AAE0F355;
+    /* border-right: 1px solid #AAE0F3; */
+    max-width: 400px;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile-box:last-child{
+    border-right: 1px solid #AAE0F355;
+}
+
+.profile-img_container{
+    /* outline: 1px solid red; */
+    width: 60%;
+    height: 60%;
+}
+
+.profile-img_container img{
+    object-fit: contain;
+}
+
+.profile-name_container{
+    color: var(--clr-white);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.profile-btn_container{
+    /* outline: 1px solid red; */
+    border: 1px solid var(--clr-light-blue);
+    border-radius: 3px;
+    padding: 5px 10px;
+    transition: all 250ms linear;
+}
+
+.profile-btn_container button{
+    color: var(--clr-light-blue);
+    background-color: transparent;
+    font-weight: 400;
+    font-family: var(--ff-btn);
+}
+
+.profile-btn_container:hover{
+    background-color: var(--clr-light-blue);
+}
+
+
+.profile-btn_container:hover button{
+    color: var(--clr-dark-green);
+}
+
+/* ------------------------------------- Main --------------------------------- */
+
+#main{
+    display: flex;
+    --w-left-margin: 9.35%;
+}
+
+/* --------------------- Main => Sidebar ------------------- */
+
+#main-aside{
+    width: 15px;
+    height: 100vh;
+    background-color: var(--clr-dark-green);
+    padding: 1px;
+    position: sticky;
+    left: 0;
+    top: 0vh;
+}
+
+#to-top-btn_container{
+    cursor: pointer;
+}
+
+/* TODO: Write an animation for the arrow up on hover so the arrow move up and down */
+
+#arrow-up{
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid var(--clr-white);
+    position: fixed;
+    bottom: 15px;
+    left: 3px;
+}
+
+aside p{
+    color: var(--clr-white);
+    font-size: 8px;
+    position: fixed;
+    bottom: 5px;
+}
+
+/* --------------------- Main => Content ------------------- */
+#content_container{
+    width: calc(100vw - 15px);
+    display: flex;
+    flex-direction: column;
+}
+
+#content_container > section{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: var(--w-left-margin) calc(90% - var(--w-left-margin)) 10%;
+    grid-template-rows: 10% 80% 10%;
+}
+
+section > header{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.design-element-square{
+    background-color: var(--clr-dark-green);
+    height: 100%;
+    width: var(--w-left-margin);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#content_container > section > header > h1{
+    position: relative;
+    left: 5.5%;
+    font-family: var(--ff-title);
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    color: var(--clr-dark-green);
+}
+
+#content_container > section > header > h1 > b{
+    color: var(--clr-white);
+}
+
+#content_container > section > header > hr{
+    position: absolute;
+    bottom: 0;
+    left: 170px;
+    height: 1px;
+    width: 80%;
+    background-color: var(--clr-dark-green);
+}
+
+section > aside {
+    border-right: 1px solid var(--clr-dark-green);
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+section > main{
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    display: flex;
+    gap: 50px;
+}
+
+section > main > p{
+    padding: 2rem 5rem;
+    font-size: var(--fs-text);
+    font-family: var(--ff-text);
+}
+
+/* ------------- Section: What we do --------------- */
+
+#what-we-do_container{
+    background-color: var(--clr-blue);
+}
