@@ -315,4 +315,35 @@ section > main > p{
 
 #what-we-do_container{
     background-color: var(--clr-blue);
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
+
+#design-element-circuit{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+#design-element-circuit img{
+    position: relative;
+    top:0;
+    right: -55%;
+    opacity: .25;
+}
+
+#what-we-do_container > header{
+    position: relative;
+    z-index: 50;
+    justify-content: center;
+    color: var(--clr-white);
+}
+
+#what-we-do_container > header > h1{
+    text-align: center;
+}
+
+/* TODO: Center the Title for 'What we do' */
