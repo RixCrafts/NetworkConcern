@@ -10,28 +10,60 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script src="./app.js"></script> -->
 
 </head>
 <body>
 
     <div id="app"></div>
 
+    
+
     <script type="text/jsx">
         const app = document.getElementById('app');
 
-        function Header(){
-            return (<header>
-                <h6>Website in progress...</h6>
-                Nav Menu
-                Logo
-                Feature profiles
-            </header>);
+        
+
+
+        function Header(props){
+            
+            return (
+                <header id="home">
+                    <h6>Website in progress...</h6>
+                    <NavBar />
+                    Logo
+                    Feature profiles
+                </header>);
+        }
+
+        function NavBar(){
+            const menuElements = ["Home", "Who we are", "Our Services", "Why us", "Blog"];
+
+            const [contacts, setContacts] = React.useState(0);
+
+            function handleClick(){
+                console.log(`Thank you for contacting us.`)
+                setContacts(contacts + 1);
+            }
+
+
+            return (
+                <nav id="top-nav">
+                    <ul>
+                        {menuElements.map((element) => (<li>{element}</li>))}
+                    </ul>
+                    <button id="nav-contact-btn" type="button" onClick={handleClick}>
+                        <h3>{`Contact Attempts: ${contacts}`}</h3>
+                    </button>
+                </nav>
+            );
         }
 
         function HomePage(){
+
             return (
                 <div>
-                    <Header />
+                    <Header title="NetCon"/>
                 </div>
             );
         }
@@ -40,9 +72,8 @@
     </script>
 
 
-
     <header id="home">
-        <nav id="top-nav">
+        <!-- <nav id="top-nav">
 
             <div id="nav-menu-btn_container">
                 <button id="nav-menu-btn" type="button"></button>
@@ -64,14 +95,14 @@
                 <li>
                     <h3>Blog</h3>
                 </li>
-            </ul>
+            </ul> 
             <button id="nav-contact-btn" type="button">
                 <h3>Contact Us</h3>
                 <div id="btn-img_container">
                     <img src="./resources/images/contact_phone.png" alt="Icon of a cell phone" width="100%">
                 </div>
             </button>
-        </nav>
+        </nav> -->
         <div id="banner">
             <!-- <video loop autoplay width="100%">
                 <source src="./resources/videos/network bg.mp4" type="video/mp4">
